@@ -12,6 +12,19 @@ It is an **evaluation experiment** to answer one question:
 
 CV deliberately **trains the model multiple times** so you can judge **generalization**, not memorization.
 
+Imagine you randomly split data once.
+
+* Maybe the test set is easy → model looks great
+
+* Maybe the test set is hard → model looks terrible
+
+So the score depends on luck.
+
+We need a way to ask:
+
+> *“If I slightly change my training data, does my model still behave similarly?”*
+
+That question leads to cross‑validation.
 ---
 
 ## 2. What `cv = k` Means
