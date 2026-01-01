@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+        .container {
+            width: 400px;
+            margin: 60px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .result {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Prediction Form</h2>
+
+    <form action="/predict-data" method="POST">
+
+        <input type="number" step="any" name="Temperature" placeholder="Temperature" required>
+        <input type="number" step="any" name="RH" placeholder="Relative Humidity (RH)" required>
+        <input type="number" step="any" name="Ws" placeholder="Wind Speed (Ws)" required>
+        <input type="number" step="any" name="Rain" placeholder="Rain" required>
+
+        <input type="number" step="any" name="FFMC" placeholder="FFMC" required>
+        <input type="number" step="any" name="DMC" placeholder="DMC" required>
+        <input type="number" step="any" name="ISI" placeholder="ISI" required>
+
+        <input type="number" step="any" name="Classes" placeholder="Classes" required>
+        <input type="number" step="any" name="Region" placeholder="Region" required>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if results is not none %}
+        <div class="result">
+            FWI Prediction Result: {{ results }}
+        </div>
+    {% endif %}
+
+</div>
+</body>
+</html>
