@@ -99,7 +99,8 @@ Wrong solver = errors or slow training.
 Critical for **imbalanced datasets**.
 
 ```
-class_weight="balanced"
+class_weight="balanced"  ## This means to give equal importance to both the classes
+class_weight = { 0 : 10, 1 : 20 }  ## This means to give 10 times importance to class 0 and 20 times importance to class 1
 ```
 
 This is often more impactful than tuning `C`.
