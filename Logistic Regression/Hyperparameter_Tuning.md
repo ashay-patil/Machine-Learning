@@ -273,7 +273,7 @@ In real projects:
 
 * `C` is often left at default
 * `class_weight` is used heavily
-* Threshold tuning beats hyperparameter tuning
+* Threshold tuning (Using ROC Curve) beats hyperparameter tuning
 * Feature engineering matters 10× more
 
 ---
@@ -332,11 +332,11 @@ GridSearch does:
 
 | Fold | Train on    | Validate on | F1  |
 | ---- | ----------- | ----------- | --- |
-| 1    | F2–F5       | F1          | f1₁ |
-| 2    | F1,F3–F5    | F2          | f1₂ |
-| 3    | F1,F2,F4,F5 | F3          | f1₃ |
-| 4    | F1–F3,F5    | F4          | f1₄ |
-| 5    | F1–F4       | F5          | f1₅ |
+| 1    | 2–5         | 1           | f1₁ |
+| 2    | 1,3–5       | 2           | f1₂ |
+| 3    | 1,2,4,5     | 3           | f1₃ |
+| 4    | 1–3,5       | 4           | f1₄ |
+| 5    | 1–4         | 5           | f1₅ |
 
 Then:
 
@@ -417,3 +417,6 @@ This is not optional. This is correctness.
 
 > *GridSearchCV evaluates every valid combination of solver, penalty, and C using k-fold cross-validation.
 > For each combination, it computes the mean validation score across folds and selects the configuration with the best average performance.*
+
+
+### If the model is less accurate even after Hyperparameter Tuning then try to change the threshold using ROC Curve

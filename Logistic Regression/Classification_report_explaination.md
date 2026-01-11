@@ -162,6 +162,6 @@ Actual category1 negative | 0 |   118     |    17     |
        category2 positive | 1 |    29     |    136    |
 ```
 
-* From here we get to know that class 1 is considered positive. Thus second line of classification report is useful to us.
+> From here we get to know that class 1 is considered positive. Thus second line of classification report is useful to us.
 
 ---
