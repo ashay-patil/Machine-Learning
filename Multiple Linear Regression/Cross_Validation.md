@@ -4,9 +4,10 @@
 
 ## 1. What Cross-Validation *Really* Is
 
-Cross-validation (CV) is **not training for deployment**.
+Finding the Cross-validation-Score is **not training the final model**. In Cross-Validation multiple models are trained on different training dataset. Cross-Validation-Score doesn't return anything an averaged optimal model. It is just an evalutaion method. 
+Cross-Validation Technique is used in Hyperparameter Tuning which helps in selecting the hyerparameters. These hyperparameters are then used to train the final model.
 
-It is an **evaluation experiment** to answer one question:
+Cross Validation is an **evaluation experiment** to answer one question:
 
 > *If I train this model on slightly different subsets of data, how reliable and stable is its performance?*
 
@@ -47,8 +48,7 @@ Each data point:
 
 ## 3. Important sklearn Behavior (Critical)
 
-* `cross_val_score()` **CLONES** the model
-* Any previous `.fit()` is **ignored**
+* Any previously trained model is **ignored**
 * Every fold starts from a **fresh, untrained model**
 
 This prevents **data leakage**.
