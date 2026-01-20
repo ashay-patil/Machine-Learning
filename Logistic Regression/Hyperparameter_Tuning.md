@@ -35,11 +35,13 @@ This is the **most important one**.
 * Small `C` → strong regularization → simpler model
 * Large `C` → weak regularization → more flexible model
 
+y = theta0 + theta1*x1 + theta2*x2 + ... In this equation if the values of theta0, theta1, theta2 are higher then we would get steep slope leading to overfitting. This can be prevented by `l2` penalty
+
 Think:
 
 ```
-C ↓  → model forced to be simple
-C ↑  → model allowed to fit harder
+C ↓  → model forced to be simple   (Reduces the theta values && The sigmoid function becomes less steep and tries to fit lesser and lesser data points)
+C ↑  → model allowed to fit harder (Increases the theta values && The sigmoid function becomes more steep and tries to fit more and more data points)
 ```
 
 ---
