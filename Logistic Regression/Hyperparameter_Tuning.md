@@ -37,6 +37,8 @@ This is the **most important one**.
 
 y = theta0 + theta1*x1 + theta2*x2 + ... In this equation if the values of theta0, theta1, theta2 are higher then we would get steep slope leading to overfitting. This can be prevented by `l2` penalty
 
+In hyperparameter Tuning we dont change the theta0 value and we just try to change the theta1, theta2, theta3, etc values and due to this only the flat and steep slope can be achieved for best fit line. If we dont keep the theta0 value constant then there would not be any change in slope.
+
 Think:
 
 ```
